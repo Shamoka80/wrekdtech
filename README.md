@@ -6,7 +6,7 @@ electronic waste innovation.
 
 **Tagline:** *Greener Thinking, Smarter Recycling*
 
-Live site: <https://wrekdtech.com>
+Live site: <https://www.wrekdtech.com/>
 
 ---
 
@@ -53,7 +53,7 @@ Intentionally minimal and easy to maintain by hand:
 - **Inline SVG** — all visuals (circular-economy/circuit motifs, the stylized South
   Carolina outline, concept and network diagrams) are hand-built SVG or CSS. No
   stock photography.
-- **No JavaScript** — the mobile navigation uses a CSS-only checkbox toggle.
+- **Minimal JavaScript** — only for the accessible mobile navigation button toggle.
 
 No frameworks, no build step, no package manager, no bundler, no CMS, no analytics,
 and no external font dependency (system font stacks only). The site loads fast and
@@ -67,7 +67,7 @@ can be edited directly.
 .
 ├── index.html      All page markup and copy
 ├── styles.css      All layout, typography, color, and visual styling
-├── CNAME           Custom domain for GitHub Pages (wrekdtech.com)
+├── CNAME           Custom domain for GitHub Pages (www.wrekdtech.com)
 └── README.md       This file
 ```
 
@@ -82,11 +82,10 @@ This site is hosted via **GitHub Pages** from the repository
 2. In the repository, open **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to *Deploy from a branch*, select
    the default branch and the `/ (root)` folder, then **Save**.
-4. The `CNAME` file points the published site at **wrekdtech.com**. Confirm the
+4. The `CNAME` file points the published site at **www.wrekdtech.com**. Confirm the
    custom domain in **Settings → Pages** and enable **Enforce HTTPS** once the
    certificate is issued.
 5. Configure DNS at the domain registrar:
-   - An apex (`wrekdtech.com`) `ALIAS`/`ANAME` or `A` records to GitHub Pages IPs, **or**
    - A `CNAME` record for `www` pointing to `shamoka80.github.io`.
 
 GitHub redeploys automatically on every push to the default branch.
@@ -100,8 +99,10 @@ GitHub redeploys automatically on every push to the default branch.
   `#collaboration`, `#r2-ready`, `#founder`, `#contact`).
 - **Colors and spacing:** edit the `:root` custom properties at the top of
   `styles.css` (`--green`, `--blue`, `--bg`, the `--sp-*` scale, etc.).
-- **Contact address:** the placeholder `contact@wrekdtech.com` appears in the
-  Contact section and footer of `index.html`; update both when a live address is set.
+- **Contact address:** `partners@wrekdtech.com` is the public contact address used in
+  the Contact section of `index.html`.
+- **Public social links:** approved public social links are included as plain text
+  links in the Contact section only.
 
 ---
 
