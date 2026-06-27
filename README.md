@@ -92,6 +92,49 @@ GitHub redeploys automatically on every push to the default branch.
 
 ---
 
+## Custom domain DNS requirements
+
+Use **one canonical custom domain** for this site: `www.wrekdtech.com`.
+The repository `CNAME` file must contain exactly that hostname, and GitHub Pages
+must show the same value in **Settings → Pages → Custom domain**.
+
+Configure the public DNS zone for `wrekdtech.com` as follows:
+
+| Host/name | Record type | Value/target | Purpose |
+| --- | --- | --- | --- |
+| `www` | `CNAME` | `shamoka80.github.io` | Sends `www.wrekdtech.com` to GitHub Pages. Do not point this record at GoDaddy parking, forwarding, or the apex domain. |
+| `@` | `A` | `185.199.108.153` | Sends the apex domain to GitHub Pages so GitHub can redirect it to `www`. |
+| `@` | `A` | `185.199.109.153` | GitHub Pages apex IPv4 address. |
+| `@` | `A` | `185.199.110.153` | GitHub Pages apex IPv4 address. |
+| `@` | `A` | `185.199.111.153` | GitHub Pages apex IPv4 address. |
+
+Optional IPv6 records for `@` may also be added if the DNS provider supports them:
+`2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, and
+`2606:50c0:8003::153`.
+
+Remove or disable any conflicting records that send `@`, `www`, or wildcard hosts
+to GoDaddy Website Builder, GoDaddy parking, domain forwarding, or a default
+"Coming Soon" page. In particular, `www` must not have an `A`, `AAAA`, forwarding,
+or parked-site record alongside the `CNAME` record.
+
+After DNS changes propagate, these checks must be true:
+
+```sh
+dig www.wrekdtech.com +nostats +nocomments +nocmd
+dig wrekdtech.com +noall +answer -t A
+curl -I https://www.wrekdtech.com/
+```
+
+Expected results:
+
+- `www.wrekdtech.com` returns a `CNAME` chain that includes `shamoka80.github.io`.
+- `wrekdtech.com` returns only GitHub Pages `A` records unless optional GitHub Pages
+  `AAAA` records are also configured.
+- `https://www.wrekdtech.com/` is served by GitHub Pages and returns the deployed
+  landing page, not a GoDaddy parking or forwarding page.
+
+---
+
 ## Editing guide
 
 - **Copy and structure:** edit `index.html`. Each section is labeled with an HTML
