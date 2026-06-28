@@ -72,7 +72,7 @@ can be edited directly.
 
 ---
 
-## Deployment (GitHub Pages)
+## Active deployment: GitHub Pages default URL
 
 This site is hosted via **GitHub Pages** from the repository
 [`Shamoka80/wrekdtech`](https://github.com/Shamoka80/wrekdtech).
@@ -84,7 +84,14 @@ This site is hosted via **GitHub Pages** from the repository
 4. Keep **Settings → Pages → Custom domain** empty for the active default-URL deployment.
 5. Do not add a root `CNAME` file while the custom domain is deferred.
 
-GitHub redeploys automatically on every push to the default branch.
+<https://shamoka80.github.io/wrekdtech/>
+
+Current deployment mode:
+
+1. The repository publishes as a GitHub Pages project site.
+2. The custom-domain `CNAME` file has been removed.
+3. No active custom-domain configuration is required while remediation work is in progress.
+4. GitHub redeploys automatically on every push to the default branch after Pages is enabled.
 
 ---
 
