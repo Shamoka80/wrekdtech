@@ -457,6 +457,111 @@ p:last-child { margin-bottom: 0; }
 }
 .split--text-wide { grid-template-columns: 1.1fr 0.9fr; }
 
+
+/* =====================================================================
+   IA Phase 1 structures: anchors, matrix, timeline
+   ===================================================================== */
+.anchor-list {
+  list-style: none;
+  margin: var(--sp-5) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-3);
+}
+.anchor-list li {
+  position: relative;
+  padding: var(--sp-3) var(--sp-4) var(--sp-3) 38px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+  color: var(--text-muted);
+}
+.anchor-list li::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 1.35em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px var(--green-soft);
+}
+.hero-anchors li { color: var(--text); }
+.matrix-wrap {
+  margin-top: var(--sp-7);
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+}
+.rd-matrix {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+.rd-matrix caption {
+  text-align: left;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--line);
+}
+.rd-matrix th,
+.rd-matrix td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--line);
+}
+.rd-matrix thead th {
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.rd-matrix tbody th { color: var(--text); font-weight: 650; }
+.rd-matrix tbody td { color: var(--text-muted); font-size: 0.94rem; }
+.rd-matrix tbody tr:last-child th,
+.rd-matrix tbody tr:last-child td { border-bottom: 0; }
+.timeline {
+  list-style: none;
+  counter-reset: stage;
+  display: grid;
+  gap: var(--sp-4);
+  margin: var(--sp-7) 0 0;
+  padding: 0;
+}
+.timeline li {
+  counter-increment: stage;
+  position: relative;
+  padding: var(--sp-5) var(--sp-5) var(--sp-5) 76px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+}
+.timeline li::before {
+  content: counter(stage);
+  position: absolute;
+  left: var(--sp-5);
+  top: var(--sp-5);
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green-soft);
+  border: 1px solid var(--green-line);
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+.timeline p { color: var(--text-muted); margin-top: var(--sp-2); }
+.founder-pillars { margin-top: var(--sp-5); }
+.best-fit { max-width: 680px; margin: var(--sp-6) auto 0; text-align: left; }
+.best-fit h3 { text-align: center; }
+
 /* =====================================================================
    Location markers
    ===================================================================== */
@@ -512,12 +617,6 @@ p:last-child { margin-bottom: 0; }
 }
 .boundary svg { width: 18px; height: 18px; color: var(--blue); flex: none; margin-top: 3px; }
 .boundary p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
-
-/* =====================================================================
-   R2 Ready (compact)
-   ===================================================================== */
-.r2 .panel { display: grid; gap: var(--sp-4); }
-.r2 .r2-top { display: flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap; }
 
 /* =====================================================================
    Founder
@@ -609,6 +708,7 @@ p:last-child { margin-bottom: 0; }
   .split--text-wide { grid-template-columns: 1fr; }
   .map-wrap { order: -1; }
   .card-grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .founder-pillars { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
 }
 
@@ -647,6 +747,16 @@ p:last-child { margin-bottom: 0; }
   .card-grid--3,
   .card-grid--2 { grid-template-columns: 1fr; }
   .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .rd-matrix { min-width: 0; }
+  .rd-matrix thead { display: none; }
+  .rd-matrix, .rd-matrix tbody, .rd-matrix tr, .rd-matrix th, .rd-matrix td { display: block; }
+  .rd-matrix tr { border-bottom: 1px solid var(--line); padding: var(--sp-4); }
+  .rd-matrix tbody tr:last-child { border-bottom: 0; }
+  .rd-matrix th, .rd-matrix td { border-bottom: 0; padding: var(--sp-2) 0; }
+  .rd-matrix td::before { display: block; color: var(--green); font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .rd-matrix td:nth-child(2)::before { content: "Possible Academic Fit"; }
+  .rd-matrix td:nth-child(3)::before { content: "Example Research Questions"; }
+  .timeline li { padding-left: var(--sp-5); padding-top: 70px; }
 }
 
 /* Respect reduced-motion preferences */
