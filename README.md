@@ -1,8 +1,8 @@
 # Wrek'd Tech — Landing Page
 
-The public landing page for **Wrek'd Tech, LLC**, a South Carolina-based green-tech
-startup developing business, compliance-readiness, and R&D pathways for future
-electronic waste innovation.
+The public landing page for **Wrek'd Tech, LLC**, a South Carolina-based,
+founder-led green-tech initiative exploring future electronic waste innovation,
+responsible materials management, and academic R&D collaboration.
 
 **Tagline:** *Greener Thinking, Smarter Recycling*
 
@@ -170,8 +170,9 @@ Please preserve these boundaries when editing:
 - **Orangeburg, South Carolina** is the **designated future headquarters** only.
 - Wrek'd Tech does **not** currently operate a recycling facility, ITAD facility,
   lab, warehouse, office, or commercial processing site.
-- **Ex-Spec** is a **conceptual** advanced e-waste recovery system at the
-  **validation-readiness** stage — no physical prototype exists today.
+- **Ex-Spec** is a **conceptual** advanced e-waste recovery system for academic
+  discussion, multidisciplinary review, and potential research alignment — no
+  physical prototype exists today.
 - **R2 Ready** is an **alpha-stage compliance-readiness initiative**. It does not
   certify facilities, guarantee certification, replace auditors or Certification
   Bodies, override certification processes, or represent SERI or any Certification
