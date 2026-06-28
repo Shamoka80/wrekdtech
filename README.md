@@ -16,7 +16,7 @@ This page is a **public credibility anchor** for exploratory academic, agency,
 incubator, advisor, and technical collaboration conversations.
 
 It is **not** a sales site, a repair service site, a recycling-pickup site, an
-investor solicitation page, a franchise page, or the R2 Ready web app.
+investor solicitation page, or a franchise page.
 
 ---
 
@@ -30,16 +30,15 @@ text, and Open Graph tags — contains only public-safe materials.
 It **intentionally excludes** all confidential technical, administrative, legal,
 financial, intellectual-property, and partnership materials, including (but not
 limited to): Ex-Spec module-level architecture, process parameters, algorithms, or
-recovery mechanisms; R2 Ready product architecture, requirement logic, question
-banks, or compliance-engine details; financial forecasts, fundraising targets, and
+recovery mechanisms; financial forecasts, fundraising targets, and
 cost models; IP and patent strategy; internal governance, ownership, or cap-table
 details; registration or tax identifiers; named institutions, agencies, professors,
 advisors, or outreach strategy; and any internal document IDs or controlled planning
 artifacts.
 
 Keep this boundary intact when editing: add only public-safe identity, high-level
-mission, general Ex-Spec concept, alpha-stage R2 Ready, founder-safe positioning, and
-general exploratory-collaboration language.
+mission, general Ex-Spec concept, founder-safe positioning, and
+general exploratory academic-collaboration language.
 
 ---
 
@@ -150,8 +149,8 @@ Expected reconnection results:
 ## Editing guide
 
 - **Copy and structure:** edit `index.html`. Each section is labeled with an HTML
-  comment and a stable `id` (`#home`, `#overview`, `#location`, `#ex-spec`, `#alignment`,
-  `#collaboration`, `#r2-ready`, `#founder`, `#contact`).
+  comment and a stable `id` (`#home`, `#challenge`, `#ex-spec`, `#alignment`,
+  `#collaboration`, `#location`, `#founder`, `#contact`).
 - **Colors and spacing:** edit the `:root` custom properties at the top of
   `styles.css` (`--green`, `--blue`, `--bg`, the `--sp-*` scale, etc.).
 - **Contact address:** `partners@wrekdtech.com` is the public contact address used in
@@ -173,10 +172,9 @@ Please preserve these boundaries when editing:
 - **Ex-Spec** is a **conceptual** advanced e-waste recovery system for academic
   discussion, multidisciplinary review, and potential research alignment — no
   physical prototype exists today.
-- **R2 Ready** is an **alpha-stage compliance-readiness initiative**. It does not
-  certify facilities, guarantee certification, replace auditors or Certification
-  Bodies, override certification processes, or represent SERI or any Certification
-  Body.
+- The public landing page centers Ex-Spec as the single named academic R&D
+  collaboration subject and does not present separate initiatives or public service
+  offerings.
 - The page makes no claim of current customers, revenue, pilots, formal
   partnerships, university or agency backing, employees, advisors, co-founders,
   IP filings, patents, certification authority, or validated/operational technology.
