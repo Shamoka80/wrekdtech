@@ -136,7 +136,10 @@ a:hover { color: #79b0e6; }
   padding-inline: 24px;
 }
 
-section { scroll-margin-top: calc(var(--header-h) + 16px); }
+section,
+#alignment {
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
 
 .section {
   padding-block: var(--sp-9);
