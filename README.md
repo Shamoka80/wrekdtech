@@ -6,7 +6,7 @@ electronic waste innovation.
 
 **Tagline:** *Greener Thinking, Smarter Recycling*
 
-Live site: <https://www.wrekdtech.com/>
+Live site: <https://shamoka80.github.io/wrekdtech/>
 
 ---
 
@@ -67,7 +67,6 @@ can be edited directly.
 .
 ├── index.html      All page markup and copy
 ├── styles.css      All layout, typography, color, and visual styling
-├── CNAME           Custom domain for GitHub Pages (www.wrekdtech.com)
 └── README.md       This file
 ```
 
@@ -78,32 +77,37 @@ can be edited directly.
 This site is hosted via **GitHub Pages** from the repository
 [`Shamoka80/wrekdtech`](https://github.com/Shamoka80/wrekdtech).
 
-1. Commit `index.html`, `styles.css`, `CNAME`, and `README.md` to the default branch.
+1. Commit `index.html`, `styles.css`, and `README.md` to the default branch.
 2. In the repository, open **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to *Deploy from a branch*, select
    the default branch and the `/ (root)` folder, then **Save**.
-4. The `CNAME` file points the published site at **www.wrekdtech.com**. Confirm the
-   custom domain in **Settings → Pages** and enable **Enforce HTTPS** once the
-   certificate is issued.
-5. Configure DNS at the domain registrar:
-   - A `CNAME` record for `www` pointing to `shamoka80.github.io`.
+4. Keep **Settings → Pages → Custom domain** empty for the active default-URL deployment.
+5. Do not add a root `CNAME` file while the custom domain is deferred.
 
 GitHub redeploys automatically on every push to the default branch.
 
 ---
 
-## Custom domain DNS requirements
+## Custom domain reconnection (deferred)
 
-Use **one canonical custom domain** for this site: `www.wrekdtech.com`.
-The repository `CNAME` file must contain exactly that hostname, and GitHub Pages
-must show the same value in **Settings → Pages → Custom domain**.
+The active deployment currently uses the default GitHub Pages URL:
+<https://shamoka80.github.io/wrekdtech/>. The custom domain `www.wrekdtech.com`
+is deferred and is not the active live-site URL. There must be no active root
+`CNAME` file while the site remains on the default GitHub Pages URL.
 
-Configure the public DNS zone for `wrekdtech.com` as follows:
+When custom-domain reconnection is intentionally resumed, use **one canonical
+custom domain** for this site: `www.wrekdtech.com`. At that time only, add a root
+`CNAME` file containing exactly that hostname, configure the same value in
+**Settings → Pages → Custom domain**, and update active metadata such as the
+canonical URL and Open Graph URL away from the default GitHub Pages URL.
+
+Before reconnecting the custom domain, configure the public DNS zone for
+`wrekdtech.com` as follows:
 
 | Host/name | Record type | Value/target | Purpose |
 | --- | --- | --- | --- |
-| `www` | `CNAME` | `shamoka80.github.io` | Sends `www.wrekdtech.com` to GitHub Pages. Do not point this record at GoDaddy parking, forwarding, or the apex domain. |
-| `@` | `A` | `185.199.108.153` | Sends the apex domain to GitHub Pages so GitHub can redirect it to `www`. |
+| `www` | `CNAME` | `shamoka80.github.io` | Sends the deferred `www.wrekdtech.com` custom domain to GitHub Pages. Do not point this record at GoDaddy parking, forwarding, or the apex domain. |
+| `@` | `A` | `185.199.108.153` | Sends the apex domain to GitHub Pages so GitHub can redirect it to `www` after custom-domain reconnection. |
 | `@` | `A` | `185.199.109.153` | GitHub Pages apex IPv4 address. |
 | `@` | `A` | `185.199.110.153` | GitHub Pages apex IPv4 address. |
 | `@` | `A` | `185.199.111.153` | GitHub Pages apex IPv4 address. |
@@ -115,9 +119,10 @@ Optional IPv6 records for `@` may also be added if the DNS provider supports the
 Remove or disable any conflicting records that send `@`, `www`, or wildcard hosts
 to GoDaddy Website Builder, GoDaddy parking, domain forwarding, or a default
 "Coming Soon" page. In particular, `www` must not have an `A`, `AAAA`, forwarding,
-or parked-site record alongside the `CNAME` record.
+or parked-site record alongside the `CNAME` record when reconnection is resumed.
 
-After DNS changes propagate, these checks must be true:
+After DNS changes propagate and the custom domain is intentionally re-enabled,
+these checks must be true:
 
 ```sh
 dig www.wrekdtech.com +nostats +nocomments +nocmd
@@ -125,7 +130,7 @@ dig wrekdtech.com +noall +answer -t A
 curl -I https://www.wrekdtech.com/
 ```
 
-Expected results:
+Expected reconnection results:
 
 - `www.wrekdtech.com` returns a `CNAME` chain that includes `shamoka80.github.io`.
 - `wrekdtech.com` returns only GitHub Pages `A` records unless optional GitHub Pages
