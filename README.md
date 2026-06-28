@@ -6,7 +6,7 @@ electronic waste innovation.
 
 **Tagline:** *Greener Thinking, Smarter Recycling*
 
-Live site: <https://www.wrekdtech.com/>
+Live site: <https://shamoka80.github.io/wrekdtech/>
 
 ---
 
@@ -67,36 +67,39 @@ can be edited directly.
 .
 ├── index.html      All page markup and copy
 ├── styles.css      All layout, typography, color, and visual styling
-├── CNAME           Custom domain for GitHub Pages (www.wrekdtech.com)
 └── README.md       This file
 ```
 
 ---
 
-## Deployment (GitHub Pages)
+## Active deployment: GitHub Pages default URL
 
 This site is hosted via **GitHub Pages** from the repository
 [`Shamoka80/wrekdtech`](https://github.com/Shamoka80/wrekdtech).
 
-1. Commit `index.html`, `styles.css`, `CNAME`, and `README.md` to the default branch.
-2. In the repository, open **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to *Deploy from a branch*, select
-   the default branch and the `/ (root)` folder, then **Save**.
-4. The `CNAME` file points the published site at **www.wrekdtech.com**. Confirm the
-   custom domain in **Settings → Pages** and enable **Enforce HTTPS** once the
-   certificate is issued.
-5. Configure DNS at the domain registrar:
-   - A `CNAME` record for `www` pointing to `shamoka80.github.io`.
+The active deployment URL is:
 
-GitHub redeploys automatically on every push to the default branch.
+<https://shamoka80.github.io/wrekdtech/>
+
+Current deployment mode:
+
+1. The repository publishes as a GitHub Pages project site.
+2. The custom-domain `CNAME` file has been removed.
+3. No active custom-domain configuration is required while remediation work is in progress.
+4. GitHub redeploys automatically on every push to the default branch after Pages is enabled.
 
 ---
 
-## Custom domain DNS requirements
+## Deferred custom-domain reconnection
 
-Use **one canonical custom domain** for this site: `www.wrekdtech.com`.
-The repository `CNAME` file must contain exactly that hostname, and GitHub Pages
-must show the same value in **Settings → Pages → Custom domain**.
+The public custom domain `www.wrekdtech.com` is intentionally deferred until the
+site remediation work is complete and the GitHub Pages default URL is verified as
+stable.
+
+When reconnecting the custom domain later, use **one canonical custom domain** for
+this site: `www.wrekdtech.com`. The repository `CNAME` file should contain exactly
+that hostname, and GitHub Pages should show the same value in **Settings → Pages →
+Custom domain**.
 
 Configure the public DNS zone for `wrekdtech.com` as follows:
 
