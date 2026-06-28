@@ -150,7 +150,7 @@ Expected reconnection results:
 ## Editing guide
 
 - **Copy and structure:** edit `index.html`. Each section is labeled with an HTML
-  comment and a stable `id` (`#home`, `#overview`, `#location`, `#ex-spec`,
+  comment and a stable `id` (`#home`, `#overview`, `#location`, `#ex-spec`, `#alignment`,
   `#collaboration`, `#r2-ready`, `#founder`, `#contact`).
 - **Colors and spacing:** edit the `:root` custom properties at the top of
   `styles.css` (`--green`, `--blue`, `--bg`, the `--sp-*` scale, etc.).
