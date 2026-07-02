@@ -1,2 +1,57 @@
-/* style update check */
-.site-header { position: sticky; }
+@import url("https://cdn.jsdelivr.net/gh/Shamoka80/wrekdtech@a408a4fdb33c01746942bed3eb2368cb7f9da843/styles.css");
+
+.site-header .container { min-height: var(--header-h); gap: 12px; }
+.site-header .brand {
+  width: 104px;
+  height: 56px;
+  flex: 0 0 104px;
+  background: url("assets/brand/Logo%20Symbol%20Name%20Tagline%20Verticle.png") left center / contain no-repeat;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.site-header .brand:hover { color: transparent; }
+.site-header .brand .brand-mark, .site-header .brand span { display: none; }
+.nav { min-width: 0; gap: 2px; }
+.nav a { white-space: nowrap; padding-inline: 7px; }
+.header-cta { white-space: nowrap; }
+
+#contact .contact-card::before {
+  content: "";
+  display: block;
+  width: clamp(210px, 34vw, 340px);
+  height: clamp(150px, 24vw, 250px);
+  margin: 0 auto 18px;
+  background: url("assets/brand/Logo%20Symbol%20Name.png") center / contain no-repeat;
+}
+
+.footer-brand .brand {
+  display: block;
+  width: clamp(170px, 22vw, 260px);
+  height: 78px;
+  background: url("assets/brand/Logo%20Symbol%20Name%20%26%20Tagline%20Horizontal.png") left center / contain no-repeat;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.footer-brand .brand .brand-mark { display: none; }
+.site-footer { padding-block: 24px; }
+.footer-grid { align-items: center; gap: var(--sp-5); }
+.footer-bottom { padding-top: 18px; }
+.social-links { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: center; }
+.social-links a { display: inline-flex; align-items: center; min-height: 32px; }
+
+@media (max-width: 1040px) {
+  .site-header .brand { width: 92px; flex-basis: 92px; }
+  .nav a { font-size: 0.86rem; padding-inline: 7px; }
+  .header-cta { display: none; }
+}
+
+@media (max-width: 760px) {
+  .site-header .brand { width: 90px; height: 52px; flex-basis: 90px; }
+  #contact .contact-card::before { width: min(280px, 74vw); height: 210px; }
+  .footer-brand .brand { width: min(240px, 72vw); height: 72px; margin-inline: auto; background-position: center; }
+  .site-footer { padding-block: 20px; }
+}
