@@ -1,0 +1,13 @@
+/* Owner-assigned logo placement rules for the Wrek'd Tech site. */
+
+.site-header .brand {
+  background-image: url("Logo Symbol Name Tagline Verticle.png");
+}
+
+#contact .contact-card::before {
+  background-image: url("Logo Symbol Name.png");
+}
+
+.footer-brand .brand {
+  background-image: url("Logo Symbol Name & Tagline Horizontal.png");
+}
