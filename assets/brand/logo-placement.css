@@ -1,0 +1,53 @@
+/* Wrek'd Tech brand asset sizing and placement rules.
+   Move these declarations into styles.css when the logo assets are wired into index.html. */
+
+.site-logo,
+.contact-logo,
+.footer-logo {
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
+.site-logo--header {
+  width: clamp(180px, 20vw, 260px);
+  max-height: 52px;
+}
+
+.contact-logo {
+  width: clamp(180px, 28vw, 220px);
+  max-height: 150px;
+  margin: 0 auto 16px;
+}
+
+.footer-logo {
+  width: 52px;
+  max-height: 52px;
+  flex: 0 0 auto;
+}
+
+.site-footer {
+  padding-block: 24px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .site-logo--header {
+    width: clamp(170px, 56vw, 210px);
+  }
+
+  .contact-logo {
+    width: min(200px, 64vw);
+  }
+
+  .footer-logo {
+    width: 44px;
+    max-height: 44px;
+  }
+}
