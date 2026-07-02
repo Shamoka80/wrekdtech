@@ -1,0 +1,6 @@
+.site-header .brand { width: 140px; height: 76px; flex-basis: 140px; background-color: transparent; }
+#contact .contact-card::before { width: clamp(126px, 20vw, 204px); height: clamp(90px, 14vw, 150px); background-color: transparent; }
+.footer-brand .brand { width: clamp(196px, 25vw, 299px); height: 90px; background-color: transparent; box-shadow: none; }
+.footer-tag { display: none; }
+@media (max-width: 1040px) { .site-header .brand { width: 124px; height: 68px; flex-basis: 124px; } }
+@media (max-width: 760px) { .site-header .brand { width: 122px; height: 70px; flex-basis: 122px; } #contact .contact-card::before { width: min(168px, 44vw); height: 126px; } .footer-brand .brand { width: min(276px, 83vw); height: 83px; } }
