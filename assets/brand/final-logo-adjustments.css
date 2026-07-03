@@ -1,6 +1,0 @@
-.site-header .brand{width:156px;height:84px;flex-basis:156px;background-color:transparent}
-#contact .contact-card::before{width:clamp(105px,17vw,170px);height:clamp(75px,12vw,125px);background-color:transparent}
-.footer-brand{background:transparent!important}.footer-brand .brand{width:clamp(230px,30vw,351px);height:105px;background:transparent url("Logo%20Symbol%20Name%20%26%20Tagline%20Horizontal.png") left center/contain no-repeat!important;box-shadow:none;border:0}.footer-brand .brand::before,.footer-brand .brand::after{display:none!important}
-.footer-tag{display:none}
-@media(max-width:1040px){.site-header .brand{width:138px;height:75px;flex-basis:138px}}
-@media(max-width:760px){.site-header .brand{width:135px;height:78px;flex-basis:135px}#contact .contact-card::before{width:min(140px,37vw);height:105px}.footer-brand .brand{width:min(324px,90vw);height:97px;background-position:center!important}}
